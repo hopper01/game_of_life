@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie+edge">
+    <title>Conway's Game of life</title>
+    <!--Link Files-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/729c955236.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <!--Link Files End-->
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Conway's Game of Life</h1>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-8 board">
+                <table id="grid"> </table>
+            </div>
+            <div class="keys-1 col-md-4">
+                <div class="box">
+                    <ul>
+                        <li>
+                            <label for="autoplay" id="auto">Autoplay</label>
+                            <input type="checkbox" id="autoplay">
+                        </li>
+                        <li><button class="play">Next</button></li>
+                        <li>
+                            <button id="reset">Clear Screen</button>
+                        </li>
+                    </ul>
+                    <div class="slidecontainer">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <input type="range" min="80" max="500" value="500" class="slider" id="myRange">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="modal-btn info" data-toggle="modal" data-target="#exampleModalCenter">
+            Information
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">John Conway’s Game of Life</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2>The Game</h2>
+                        <p>The Game of Life is not your typical computer game. It is a cellular automaton, and was
+                            invented by Cambridge mathematician John Conway.
+
+                            This game became widely known when it was mentioned in an article published by Scientific
+                            American in 1970. It consists of a collection of cells which, based on a few mathematical
+                            rules, can live, die or multiply. Depending on the initial conditions, the cells form
+                            various patterns throughout the course of the game.</p>
+                        <h2>The Rules</h2>
+                        <h3>For a space that is populated:</h3>
+                        <p> Each cell with one or no neighbors dies, as if by solitude.<br>
+                            Each cell with four or more neighbors dies, as if by overpopulation.<br>
+                            Each cell with two or three neighbors survives.</p>
+                        <h3>For a space that is empty or unpopulated</h3>
+                        <p>Each cell with three neighbors becomes populated.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="foot">
+        <p>Coded by~ <span class="h-01">hopper</span></p>
+    </footer>
+    <script src="js/life.js"></script>
+</body>
+
+</html>
